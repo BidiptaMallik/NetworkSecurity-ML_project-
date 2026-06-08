@@ -158,7 +158,8 @@ env.bak/
 venv.bak/
 Artifacts/
 logs/
-
+mlruns/
+mlflow.db
 # Spyder project settings
 .spyderproject
 .spyproject
