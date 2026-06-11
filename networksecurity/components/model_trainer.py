@@ -17,9 +17,7 @@ from sklearn.ensemble import (
     GradientBoostingClassifier,
     RandomForestClassifier,
 )
-# import dagshub
-# dagshub.init(repo_owner='BidiptaMallik', repo_name='NetworkSecurity-ML_project-', mlflow=True)
-import mlflow
+
 
 
 class ModelTrainer:
@@ -31,6 +29,11 @@ class ModelTrainer:
             raise NetworkSecurityException(e,sys)
         
     def track_mlflow(self,best_model,classificationmetric):
+
+        import dagshub
+        dagshub.init(repo_owner='BidiptaMallik', repo_name='NetworkSecurity-ML_project-', mlflow=True)
+        import mlflow
+
         with mlflow.start_run():
             f1_score=classificationmetric.f1_score
             precision_score=classificationmetric.precision_score

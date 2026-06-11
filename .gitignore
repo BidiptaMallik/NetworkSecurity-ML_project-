@@ -161,6 +161,8 @@ logs/
 mlruns/
 mlflow.db
 final_models/
+prediction_output/
+
 # Spyder project settings
 .spyderproject
 .spyproject
