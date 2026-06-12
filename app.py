@@ -43,9 +43,16 @@ templates=Jinja2Templates(directory="./templates")
 
 
 
-@app.get("/",tags=["authentication"])
-async def index():
-    return RedirectResponse(url="/docs")
+@app.get("/")
+async def index(request: Request):
+    return templates.TemplateResponse(
+        name="index.html",
+        request=request,
+        context={}
+    )
+
+
+
 
 @app.get("/train")
 async def train_route():
@@ -72,13 +79,12 @@ async def predict_route(request:Request,file:UploadFile=File(...)):
         df.to_csv("prediction_output/output.csv")
         table_html = df.head(50).to_html(classes='table table-striped')
         return templates.TemplateResponse(
-            name="table.html",
-            request=request,
-            context={
-                "table": table_html
-            }
-        )
-    
+    name="table.html",
+    request=request,
+    context={
+        "table": table_html
+    }
+)
     except Exception as e:
         raise NetworkSecurityException(e,sys)
         

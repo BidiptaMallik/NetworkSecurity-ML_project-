@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Security Threat Detection</title>
+
+```
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:'Segoe UI',sans-serif;
+    }
+
+    body{
+        background:linear-gradient(135deg,#0f172a,#1e293b);
+        min-height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding:20px;
+    }
+
+    .container{
+        background:white;
+        padding:40px;
+        border-radius:20px;
+        width:100%;
+        max-width:600px;
+        text-align:center;
+        box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    h1{
+        color:#0f172a;
+        margin-bottom:10px;
+    }
+
+    p{
+        color:#64748b;
+        margin-bottom:30px;
+    }
+
+    .upload-box{
+        border:2px dashed #2563eb;
+        border-radius:15px;
+        padding:30px;
+        margin-bottom:20px;
+    }
+
+    input[type="file"]{
+        width:100%;
+        padding:10px;
+    }
+
+    button{
+        background:#2563eb;
+        color:white;
+        border:none;
+        padding:12px 25px;
+        border-radius:10px;
+        font-size:16px;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    button:hover{
+        background:#1d4ed8;
+    }
+
+    .footer{
+        margin-top:20px;
+        color:#64748b;
+        font-size:14px;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<h1>🛡️ Network Security Threat Detection</h1>
+
+<p>Upload a CSV file and predict phishing websites using Machine Learning.</p>
+
+<form action="/predict" method="post" enctype="multipart/form-data">
+
+    <div class="upload-box">
+        <input type="file" name="file" accept=".csv" required>
+    </div>
+
+    <button type="submit">
+        Predict
+    </button>
+
+</form>
+
+<div class="footer">
+    Powered by FastAPI • Scikit-Learn • MLflow
+</div>
+```
+
+</div>
+
+</body>
+</html>

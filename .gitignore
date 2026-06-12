@@ -162,6 +162,7 @@ mlruns/
 mlflow.db
 final_models/
 prediction_output/
+test.csv
 
 # Spyder project settings
 .spyderproject
