@@ -62,7 +62,17 @@ async def train_route():
         return Response("Training is successful")
     except Exception as e:
         raise NetworkSecurityException(e,sys)
-    
+
+
+import os
+
+print("Current directory:", os.getcwd())
+print("Model exists:", os.path.exists("final_models/model.pkl"))
+print("Preprocessor exists:", os.path.exists("final_models/preprocessor.pkl"))
+print("Templates exist:", os.path.exists("templates/table.html"))
+
+
+
 @app.post("/predict")
 async def predict_route(request:Request,file:UploadFile=File(...)):
     try:
@@ -76,6 +86,10 @@ async def predict_route(request:Request,file:UploadFile=File(...)):
         print(y_pred)
         df['predicted_column']=y_pred
         print(df['predicted_column'])
+        import os
+
+        
+        os.makedirs("prediction_output", exist_ok=True)
         df.to_csv("prediction_output/output.csv")
         table_html = df.head(50).to_html(classes='table table-striped')
         return templates.TemplateResponse(
